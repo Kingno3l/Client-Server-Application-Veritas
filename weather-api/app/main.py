@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # loads .env in development
 
+
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
 if not API_KEY:
     # It's fine for local dev to run without key but endpoint will return helpful error.
