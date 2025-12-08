@@ -131,3 +131,26 @@ input:focus {
         width: 30%;
     }
 }
+
+/* Chrome, Safari, Opera */
+#search-input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+    /* ensures full color */
+}
+
+/* Firefox */
+#search-input::-moz-placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Internet Explorer 10-11 */
+#search-input:-ms-input-placeholder {
+    color: #ffffff;
+}
+
+/* Microsoft Edge */
+#search-input::-ms-input-placeholder {
+    color: #ffffff;
+}

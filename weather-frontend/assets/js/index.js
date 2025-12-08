@@ -76,3 +76,37 @@ input.addEventListener("keyup", (e) => {
 window.onload = () => {
   fetchWeather("Abuja");
 };
+
+// Select all suggestion elements
+const suggestions = document.querySelectorAll(".suggestion");
+
+// Loop over them and attach click event
+suggestions.forEach((el) => {
+    el.addEventListener("click", () => {
+        const city = el.textContent.trim(); // get city name
+        fetchWeather(city);
+    });
+});
+
+// Example fetchWeather function
+async function fetchWeather(city) {
+    try {
+        const response = await fetch(`https://client-server-application-veritas.onrender.com/weather?city=${city}`);
+        const data = await response.json();
+        
+        // Update your UI
+        document.querySelector(".city-name").textContent = city;
+        document.getElementById("temp-value").textContent = `${data.main.temp}°`;
+        document.getElementById("weather-main").textContent = data.weather[0].main;
+        document.getElementById("weather-desc").textContent = data.weather[0].description;
+        document.getElementById("detail-clouds").textContent = `Clouds: ${data.clouds.all}%`;
+        document.getElementById("detail-humidity").textContent = `Humidity: ${data.main.humidity}%`;
+        document.getElementById("detail-wind").textContent = `Wind: ${data.wind.speed} km/h`;
+        document.getElementById("detail-rain").textContent = `Rain: ${data.rain ? data.rain["1h"] : 0} mm`;
+        
+    } catch (err) {
+        console.error(err);
+        alert("Failed to fetch weather");
+    }
+}
+
