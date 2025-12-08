@@ -1,68 +1,78 @@
-const API_URL = "https://client-server-application-veritas.onrender.com";
+const API_BASE =
+  "https://client-server-application-veritas.onrender.com/weather";
 
+const input = document.querySelector("input[name='location']");
+const searchBtn = document.getElementById("search-btn");
+
+// display fields
+const tempValue = document.getElementById("temp-value");
+const cityName = document.querySelector(".city-name");
+const dateTime = document.getElementById("date-time");
+const weatherMain = document.getElementById("weather-main");
+const weatherDesc = document.getElementById("weather-desc");
+
+const cloudsDetail = document.getElementById("detail-clouds");
+const humidDetail = document.getElementById("detail-humidity");
+const windDetail = document.getElementById("detail-wind");
+const rainDetail = document.getElementById("detail-rain");
+
+// Format date
+function formatDate() {
+  const now = new Date();
+  return now.toLocaleString("en-US", {
+    weekday: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+// Fetch weather data
 async function fetchWeather(city) {
   try {
-    const response = await fetch(`${API_URL}/weather?city=${city}`);
+    let res = await fetch(`${API_BASE}?city=${city}`);
 
-    if (!response.ok) throw new Error("City not found");
+    if (!res.ok) {
+      alert("City not found!");
+      return;
+    }
 
-    const data = await response.json();
-    updateUI(data);
-  } catch (err) {
-    alert(err.message);
+    let data = await res.json();
+
+    // Update UI
+    tempValue.textContent = `${data.main.temp}°`;
+    cityName.textContent = data.name;
+    dateTime.textContent = formatDate();
+    weatherMain.textContent = data.weather[0].main;
+    weatherDesc.textContent = data.weather[0].description;
+
+    cloudsDetail.textContent = `Clouds: ${data.clouds.all}%`;
+    humidDetail.textContent = `Humidity: ${data.main.humidity}%`;
+    windDetail.textContent = `Wind: ${data.wind.speed} km/h`;
+    rainDetail.textContent = `Rain: ${data.rain ? data.rain["1h"] : 0} mm`;
+  } catch (error) {
+    alert("Could not load weather.");
+    console.error(error);
   }
 }
 
-function updateUI(data) {
-  // main temperature
-  document.getElementById("temp-value").innerHTML = `${Math.round(
-    data.main.temp
-  )}°`;
+// Search button
+searchBtn.addEventListener("click", () => {
+  const city = input.value.trim();
+  if (city) fetchWeather(city);
+});
 
-  // city name
-  document.querySelector(".city-name").innerHTML = data.name;
-
-  // date/time
-  const now = new Date();
-  document.getElementById("date-time").innerHTML = now.toLocaleString();
-
-  // weather icon + desc
-  document.getElementById("weather-main").innerHTML = data.weather[0].main;
-  document.getElementById("weather-desc").innerHTML =
-    data.weather[0].description;
-
-  // details section
-  document.getElementById("detail-clouds").innerHTML = data.clouds.all + "%";
-  document.getElementById("detail-humidity").innerHTML =
-    data.main.humidity + "%";
-  document.getElementById("detail-wind").innerHTML = data.wind.speed + " km/h";
-  document.getElementById("detail-rain").innerHTML = data.rain
-    ? (data.rain["1h"] || 0) + " mm"
-    : "0 mm";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector("input[name='location']");
-  const searchBtn = document.getElementById("search-btn");
-
-  // search click
-  searchBtn.addEventListener("click", () => {
+// Enter key
+input.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
     const city = input.value.trim();
     if (city) fetchWeather(city);
-  });
-
-  // enter key support
-  input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      const city = input.value.trim();
-      if (city) fetchWeather(city);
-    }
-  });
-
-  // suggestion click
-  document.querySelectorAll(".suggestion").forEach((item) => {
-    item.addEventListener("click", () => {
-      fetchWeather(item.textContent);
-    });
-  });
+  }
 });
+
+// ❗ Default load → Abuja
+window.onload = () => {
+  fetchWeather("Abuja");
+};
