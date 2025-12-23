@@ -148,7 +148,7 @@ The frontend is hosted on GitHub Pages and can be accessed via the live demo lin
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 * Frontend Live Demo:
-  👉 [https://kingno3l.github.io/veritas-weather-client-assignment/](https://kingno3l.github.io/veritas-weather-client-assignment/)
+  👉 [https://kingno3l.github.io/veritas-weather-client-assignment-frontend/](https://kingno3l.github.io/veritas-weather-client-assignment-frontend/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
