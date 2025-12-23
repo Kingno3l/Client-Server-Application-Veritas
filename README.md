@@ -2,14 +2,6 @@
 
 <a name="readme-top"></a>
 
-<!-- <div align="center">
-
-<!-- MAIN HEADING -->
-
-  <h3><b>WEATHER CLIENT–SERVER APPLICATION</b></h3>
-
-</div> -->
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
