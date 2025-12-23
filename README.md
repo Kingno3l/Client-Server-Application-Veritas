@@ -1,14 +1,14 @@
-# Client-Server-Application-Veritas
+# WEATHER CLIENT–SERVER APPLICATION Veritas University MSc Assignment
 
 <a name="readme-top"></a>
 
-<div align="center">
+<!-- <div align="center">
 
 <!-- MAIN HEADING -->
 
   <h3><b>WEATHER CLIENT–SERVER APPLICATION</b></h3>
 
-</div>
+</div> -->
 
 <!-- TABLE OF CONTENTS -->
 
