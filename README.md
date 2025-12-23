@@ -1,5 +1,6 @@
 # WEATHER CLIENT–SERVER APPLICATION Veritas University MSc Assignment
 
+
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
@@ -87,4 +88,132 @@
 ```sh
 git clone https://github.com/Kingno3l/Client-Server-Application-Veritas.git
 cd Client-Server-Application-Veritas
+````
+
+---
+
+### Setup
+
+The project consists of two parts:
+
+* Backend (FastAPI)
+* Frontend (HTML, CSS, JavaScript)
+
+---
+
+### Prerequisites
+
+1. A Browser (Preferably Google Chrome)
+2. A Code Editor (VS Code recommended)
+3. Python (v3.8+)
+4. Internet Connection
+5. Git
+
+---
+
+### Install
+
+#### Backend (FastAPI)
+
+```sh
+pip install -r requirements.txt
+```
+
+> Make sure you set your **OpenWeatherMap API key** as an environment variable.
+
+---
+
+### Usage
+
+#### Backend API (Hosted)
+
+The backend is deployed on Render and available at:
+
+```
+https://client-server-application-veritas.onrender.com/weather
+```
+
+Example request:
+
+```sh
+GET /weather?city=Lagos
+```
+
+#### Frontend (Live)
+
+The frontend is hosted on GitHub Pages and can be accessed via the live demo link below.
+
+---
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+* Frontend Live Demo:
+  👉 [https://kingno3l.github.io/veritas-weather-client-assignment/](https://kingno3l.github.io/veritas-weather-client-assignment/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **King Immanuel**
+
+* GitHub: [@Kingno3l](https://github.com/Kingno3l)
+* LinkedIn: [King Immanuel](https://www.linkedin.com/in/kingno3l)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 🔭 Future Features <a name="future-features"></a>
+
+* Add 5-day weather forecast
+* Improve UI and UX
+* Add loading and error states
+* Allow location-based weather search
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- CONTRIBUTION -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+> If you like this project, please give it a ⭐️
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Special thanks to **OpenWeatherMap** for providing the weather API and to the **FastAPI documentation**.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](/LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```
 
