@@ -1,168 +1,216 @@
 # Client-Server-Application-Veritas
 
+<a name="readme-top"></a>
 
-# 🌦️ Weather Client–Server Application
+<div align="center">
 
-## 📖 Project Description
+<!-- MAIN HEADING -->
 
-This project is a **client–server weather application** built using **FastAPI** for the backend and **React** for the frontend.
+  <h3><b>WEATHER CLIENT–SERVER APPLICATION</b></h3>
 
-The client sends HTTP requests to the server to request weather data.  
-The server then fetches real-time weather information from an external weather API and returns the data to the client in JSON format.
+</div>
 
----
+<!-- TABLE OF CONTENTS -->
 
-## 🏗️ Project Structure
+# 📗 Table of Contents
 
-```
+- [📗 Table of Contents](#-table-of-contents)
+- [WEATHER CLIENT–SERVER APPLICATION](#weather-clientserver-application)
+  - [🛠 Built With](#-built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [💻 Getting Started](#-getting-started)
+    - [Setup](#setup)
+    - [Prerequisites](#prerequisites)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [🚀 Live Demo](#-live-demo)
+  - [👥 Authors](#-authors)
+  - [🔭 Future Features](#-future-features)
+  - [🤝 Contributing](#-contributing)
+  - [⭐️ Show your support](#️-show-your-support)
+  - [🙏 Acknowledgments](#-acknowledgments)
+  - [📝 License](#-license)
 
-.
-├── weather-api/         # FastAPI backend
-│   ├── main.py
-│   ├── requirements.txt
-│   └── ...
-│
-├── weather-frontend/    # React frontend
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── ...
-│
-└── README.md
+<!-- INTRO -->
 
+# WEATHER CLIENT–SERVER APPLICATION <a name="about-project"></a>
+
+> This is a client–server weather application built with FastAPI for the backend and HTML, CSS, and Vanilla JavaScript for the frontend.  
+> The client sends HTTP requests to the server, and the server fetches real-time weather data from an external weather API and returns it to the client.
+
+## 🛠 Built With <a name="built-with"></a>
+
+1. PYTHON
+2. FASTAPI
+3. HTML
+4. CSS
+5. JAVASCRIPT
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript (Vanilla)</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://fastapi.tiangolo.com/">FastAPI</a></li>
+    <li><a href="https://www.python.org/">Python</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+> - Client–server architecture using HTTP  
+> - Fetches real-time weather data from an external API  
+> - RESTful API built with FastAPI  
+> - Frontend built with HTML, CSS, and Vanilla JavaScript  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+> To get a local copy of the project, clone the repository:
+
+```sh
+git clone https://github.com/your-username/weather-client-server-app.git
+cd weather-client-server-app
 ````
 
----
+<!-- SETUP -->
 
-## 🛠️ Technologies Used
+### Setup
 
-### Backend (Server)
-- FastAPI
-- Python
-- Uvicorn
-- HTTP Requests (to external weather API)
+Navigate to the backend and frontend folders separately to run each service.
 
-### Frontend (Client)
-- React
-- JavaScript
-- HTML & CSS
-- Fetch API / Axios
+### Prerequisites
 
----
+1. A Browser (Preferably Google Chrome)
+2. A Code Editor (VS Code recommended)
+3. Python (v3.8+)
+4. Internet Connection
+5. Git
 
-## 🔄 How the Application Works
+<!-- INSTALL -->
 
-1. The user enters a city name in the React frontend.
-2. The frontend sends an HTTP request to the FastAPI server.
-3. The server requests weather data from a third-party weather API.
-4. The server returns the weather data as a JSON response.
-5. The frontend displays the weather information to the user.
+### Install
 
----
+#### Backend (weather-api)
 
-## ⚙️ Backend Setup (weather-api)
-
-1. Navigate to the backend folder:
-   ```bash
-   cd weather-api
-````
-
-2. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Start the FastAPI server:
-
-   ```bash
-   uvicorn main:app --reload
-   ```
-
-4. The API will be available at:
-
-   ```
-   http://localhost:8000
-   ```
-
----
-
-## 💻 Frontend Setup (weather-frontend)
-
-1. Navigate to the frontend folder:
-
-   ```bash
-   cd weather-frontend
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the React development server:
-
-   ```bash
-   npm start
-   ```
-
-4. The application will be available at:
-
-   ```
-   http://localhost:3000
-   ```
-
----
-
-## 📡 Example API Endpoint
-
-```
-GET /weather?city=Abuja
+```sh
+cd weather-api
+pip install -r requirements.txt
 ```
 
-### Sample Response
+#### Frontend (HTML, CSS & JS)
 
-```json
-{
-  "city": "Abuja",
-  "temperature": 30,
-  "description": "Clear sky",
-  "humidity": 60
-}
+No installation required.
+Simply open the `index.html` file in a browser or use a local server.
+
+### Usage
+
+#### Run Backend Server
+
+```sh
+cd weather-api
+uvicorn main:app --reload
+```
+
+Backend runs on:
+
+```
+http://localhost:8000
+```
+
+#### Run Frontend
+
+* Open `index.html` in your browser
+  **OR**
+* Use a local server (recommended):
+
+  ```sh
+  python -m http.server
+  ```
+
+Frontend runs on:
+
+```
+http://localhost:8000 or http://localhost:5500
+```
+
+#### API Endpoint Example
+
+```sh
+GET /weather?city=Lagos
 ```
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo <a name="live-demo"></a>
 
-* Client–server architecture
-* Real-time weather data
-* RESTful API communication
-* Clean separation of frontend and backend
+* Live demo not available yet
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 📌 Notes
+<!-- AUTHORS -->
 
-* A valid weather API key is required.
-* CORS is enabled on the backend to allow requests from the frontend.
+## 👥 Authors <a name="authors"></a>
 
----
+👤 **Your Name**
 
-## 👤 Author
+* GitHub: [@your-github-username](https://github.com/your-github-username)
+* LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-linkedin)
 
-Developed as a **Client–Server Application project** using **FastAPI and React**.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```
+## 🔭 Future Features <a name="future-features"></a>
 
----
+* Add 5-day weather forecast
+* Improve UI design
+* Add error handling for invalid cities
 
-If you want, I can:
-- Shorten it for a **school assignment**
-- Add **screenshots section**
-- Customize it to match your **exact endpoint names**
-- Add **deployment instructions (Render / Vercel)**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Just tell me 👍
+<!-- CONTRIBUTION -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+> If you like this project, please give it a ⭐️
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Thanks to the weather API provider and FastAPI documentation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](/LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 ```
