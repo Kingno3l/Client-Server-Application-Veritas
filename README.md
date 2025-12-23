@@ -1,12 +1,6 @@
 # Client-Server-Application-Veritas
 
-Got it 👍
-Here’s a **ready-to-copy Markdown README** that matches your folders **`weather-api`** (FastAPI backend) and **`weather-frontend`** (React frontend).
-You can paste this **directly into `README.md` on GitHub**.
 
----
-
-```md
 # 🌦️ Weather Client–Server Application
 
 ## 📖 Project Description
